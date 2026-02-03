@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employee Detail</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  background:#eee;
+  font-size:14px;
+}
+.box{
+  background:#fff;
+  border:1px solid #999;
+  padding:15px 20px;
+  max-width:600px;
+  margin:20px auto;
+}
+.section-title{
+  font-weight:bold;
+  border-bottom:1px solid #999;
+  margin:15px 0 10px;
+}
+label{
+  font-weight:bold;
+}
+.required::after{
+  content:" *";
+  color:red;
+}
+.fake-input{
+  border:1px solid #ccc;
+  padding:6px 10px;
+  background:#f9f9f9;
+}
+.editor{
+  border:1px solid #aaa;
+}
+.editor-toolbar{
+  background:#f0f0f0;
+  border-bottom:1px solid #aaa;
+  padding:4px;
+  font-size:12px;
+}
+.editor-body{
+  padding:8px;
+  min-height:80px;
+}
+.captcha{
+  font-family:monospace;
+  font-size:20px;
+  letter-spacing:3px;
+  background:#eee;
+  display:inline-block;
+  padding:5px 10px;
+}
+.footer-note{
+  font-size:12px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <div class="section-title">Basic Info</div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Employee ID</b></div>
+    <div class="col-9">9</div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><label class="required">Last Name</label></div>
+    <div class="col-9"><input class="form-control" value="Dodsworth"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><label class="required">First Name</label></div>
+    <div class="col-9">
+      <div class="d-flex">
+        <input class="form-control" value="Anne">
+        <span class="ms-2">📄</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Gender</b></div>
+    <div class="col-9">
+      <div><input type="radio" name="g"> Male</div>
+      <div><input type="radio" name="g"> Female</div>
+      <div><input type="radio" name="g" checked> XXX</div>
+      <div><input type="radio" name="g"> ZZZ</div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Title</b></div>
+    <div class="col-9"><input class="form-control" value="Sales Representative"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Suffix</b></div>
+    <div class="col-9"><input class="form-control" value="Ms."></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>BirthDate</b></div>
+    <div class="col-9 d-flex align-items-center">
+      <input class="form-control" value="1969-07-02 00:00:00">
+      <span class="ms-2">(?)</span>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>HireDate</b></div>
+    <div class="col-9">
+      <input class="form-control" value="1994-11-15 00:00:00">
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>SSN # (if applicable)</b></div>
+    <div class="col-9"><input class="form-control"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Reports To</b></div>
+    <div class="col-9">
+      <select class="form-select">
+        <option selected>Buchanan</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section-title">Contact Info</div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Email</b></div>
+    <div class="col-9"><input class="form-control" placeholder="name@example.com"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Address</b></div>
+    <div class="col-9"><input class="form-control" value="7 Houndstooth Rd."></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>City</b></div>
+    <div class="col-9"><input class="form-control" value="London"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Region</b></div>
+    <div class="col-9"><input class="form-control"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Postal Code</b></div>
+    <div class="col-9"><input class="form-control" value="WG2 7LT"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Country</b></div>
+    <div class="col-9">
+      <select class="form-select">
+        <option selected>Russian Federation</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>US Home Phone</b></div>
+    <div class="col-9"><input class="form-control" value="(234)234-2342"></div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Photo</b></div>
+    <div class="col-9"><input type="file" class="form-control"></div>
+  </div>
+
+  <div class="section-title">Optional Info</div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Notes</b></div>
+    <div class="col-9 editor">
+      <div class="editor-toolbar">B I U | Align | List | Link | X</div>
+      <div class="editor-body">
+        Anne has a BA degree in English from St. Lawrence College.<br>
+        She is fluent in French and German.ZZZ
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Preferred Shift</b></div>
+    <div class="col-9">
+      <div><input type="checkbox"> Regular</div>
+      <div><input type="checkbox" checked> Gravy Yard</div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-3"><b>Active?</b></div>
+    <div class="col-9"><input type="checkbox" checked></div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3"><b>Are you human?</b></div>
+    <div class="col-9">
+      <span class="captcha">TIDA4WQ</span>
+      <span class="ms-2 text-muted">Click to change</span>
+      <input class="form-control mt-2">
+    </div>
+  </div>
+
+  <div class="text-end">
+    <button class="btn btn-dark btn-sm">Submit</button>
+    <button class="btn btn-secondary btn-sm">Cancel</button>
+  </div>
+
+  <div class="footer-note">* required</div>
+
+</div>
+
+</body>
+</html>
